@@ -3,7 +3,9 @@ require "pp"
 
 RSpec.describe Document do
   it "works" do
-    # document = FactoryGirl.create(:document_with_sections_and_paragraphs)
+    puts "We have Paper trail? #{PaperTrail.enabled?}"
+    Document.paper_trail_on!
+    Section.paper_trail_on!
     d = Document.create_sample_document
     puts 'Current version of document'
     expect(d.title).to eq("d v2")
