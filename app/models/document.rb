@@ -17,6 +17,7 @@ class Document < ActiveRecord::Base
     s1.update_attributes(title: 's1 v2')
     puts 'Updating document itself'
     d.update_attributes(title: 'd v2')
+    s1.update_attributes(title: 's1 v3')
     p1a.update_attributes(title: 'p1a v3')
     d
   end
