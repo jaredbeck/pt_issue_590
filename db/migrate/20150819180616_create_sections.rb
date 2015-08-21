@@ -1,4 +1,4 @@
-class CreateParagraphs < ActiveRecord::Migration
+class CreateSections < ActiveRecord::Migration
   def up
     create_table :documents do |t|
       t.string :title
@@ -11,15 +11,9 @@ class CreateParagraphs < ActiveRecord::Migration
       t.timestamps null: false
     end
 
-    create_table :paragraphs do |t|
-      t.integer :section_id
-      t.string :title
-      t.timestamps null: false
-    end
   end
 
   def down
-    drop_table :paragraphs
     drop_table :sections
     drop_table :documents
   end
